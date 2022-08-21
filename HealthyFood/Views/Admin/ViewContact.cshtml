@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Full Contact";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12"
+                <div class="table-responsive">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Mã Phản Hồi</th>
+                                <th>Họ Tên</th>
+                                <th>Email</th>
+                                <th>Phản Hồi</th>
+                            </tr>
+                        <thead>
+                            @foreach (var item in ViewBag.Contact)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.MaPH</td>
+                                    <td>@item.HoTen</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Comment</td>
+                                </tr>
+
+                            }
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

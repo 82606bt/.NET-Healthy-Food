@@ -1,0 +1,22 @@
+﻿@if (ViewBag.User == null)
+{
+    <div class="header__top__right__auth">
+        <a href="/Customer/Login"><i class="fa fa-user"></i> Đăng nhập |</a>
+    </div>
+    <div class="header__top__right__auth">
+        <a href="/Customer/Register">Đăng ký</a>
+    </div>
+}
+else
+{
+<div class="header__top__right__language">
+
+    <div>@ViewBag.User.HoTen</div>
+    <span class="arrow_carrot-down"></span>
+    <ul>
+        <li><a href="/Home/Info/@ViewBag.User.MaKH">Thông tin</a></li>
+        <li><a href="/Home/Logout">Thoát</a></li>
+    </ul>
+</div>
+}
+

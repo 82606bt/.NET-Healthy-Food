@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Full Product";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+    @model PagedList.IPagedList<HealthyFood.SQL.SANPHAM>
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="table-responsive">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th style="width:100px;">Hình ảnh</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Mô tả</th>
+                                <th>Giá</th>
+                                <th>Số lượng tồn</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        <thead>
+                            @foreach (var item in @Model)
+                            {
+                                <tr>
+                                    <td>@item.MaSanPham</td>
+                                    <td><img style="height:100px; width:150px;" src="@item.Anhbia"></td>
+                                    <td>@item.TenSanPham</td>
+                                    <td>@item.Mota</td>
+                                    <td>@item.Giaban</td>
+                                    <td>@item.Soluongton</td>
+                                    <td>
+                                        <a class="btn btn-success" href="@Url.Action("EditProduct", new { iD = item.MaSanPham })">Sửa</a>
+
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href="@Url.Action("RemoveProduct", new { id = item.MaSanPham })">Xóa</a>
+                                    </td>
+
+                                </tr>
+
+                            }
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="product__pagination">
+                        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+                        @Html.PagedListPager(Model, page => Url.Action("Product", new { page }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .product__pagination,
+    .blog__pagination {
+        padding-top: 10px;
+    }
+
+        .product__pagination a,
+        .blog__pagination a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #b2b2b2;
+            font-size: 14px;
+            color: #b2b2b2;
+            font-weight: 700;
+            line-height: 28px;
+            text-align: center;
+            margin-right: 16px;
+            -webkit-transition: all, 0.3s;
+            -moz-transition: all, 0.3s;
+            -ms-transition: all, 0.3s;
+            -o-transition: all, 0.3s;
+            transition: all, 0.3s;
+        }
+
+            .product__pagination a:hover,
+            .blog__pagination a:hover {
+                background: #7fad39;
+                border-color: #7fad39;
+                color: #ffffff;
+            }
+
+            .product__pagination a:last-child,
+            .blog__pagination a:last-child {
+                margin-right: 0;
+            }
+</style>

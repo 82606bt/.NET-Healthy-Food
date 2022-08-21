@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Cart Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Giỏ hàng</h2>
+                    <div class="breadcrumb__option">
+                        <a href="/Home/Index">Home</a>
+                        <span>Giỏ hàng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Shoping Cart Section Begin -->
+@if (ViewBag.DSSanPham != null)
+{
+    string @total = string.Format("{0:#,##0}", @ViewBag.TongTien);
+    string @checkOut = string.Format("{0:#,##0}", @ViewBag.ThanhToan);
+
+    <section class="shoping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="shoping__product">Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in ViewBag.DSSanPham)
+                                {
+                                    string @gia = string.Format("{0:#,##0}", @item.Giaban);
+                                    string @thanhtien = string.Format("{0:#,##0}", @item.ThanhTien);
+                                    <tr>
+                                        <td class="shoping__cart__item">
+                                            <img src="@item.Anhbia" alt="" style="max-width:14%">
+                                            <h5>@item.TenSanPham</h5>
+                                        </td>
+                                        <td class="shoping__cart__price">
+                                            @gia
+                                        </td>
+                                        <td class="shoping__cart__quantity">
+                                            <div class="input-group mb-3" style="max-width: 120px;margin-left: 3.5em;">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn btn-outline-success js-btn-minus" onclick="window.location = '/ShoppingCart/GiamSoLuong/@item.MaSanPham'" type="button">&minus;</button>
+                                                </div>
+                                                <input type="text" class="form-control text-center" value="@item.Soluong" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-success js-btn-plus" onclick="window.location='/ShoppingCart/ThemGioHang/@item.MaSanPham'" type="button">&plus;</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="shoping__cart__total">
+                                            @thanhtien
+                                        </td>
+                                        <td class="shoping__cart__item__close">
+                                            <a href="/ShoppingCart/XoaGioHang/@item.MaSanPham" class="icon_close"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+                        <a href="/Home/Product" class="primary-btn cart-btn">MUA TIẾP</a>
+                        <a href="/ShoppingCart/Cart" class="primary-btn cart-btn cart-btn-right">
+                            <span class="fa fa-spinner fa-spin"></span>
+                            CẬP NHẬT GIỎ HÀNG
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__continue">
+                        <div class="shoping__discount">
+                            <h5>Mã giảm giá</h5>
+                            <form action="GiamGia" method="post">
+                                <input type="text" placeholder="Nhập mã" name="Code">
+                                <button type="submit" class="site-btn">Áp dụng</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__checkout">
+                        <h5>Tổng tiền giỏ hàng </h5>
+                        <ul>
+                            <li>Tổng phụ<span>@total</span></li>
+                            <li>Tổng <span>@checkOut</span></li>
+                        </ul>
+                        <a href="/ShoppingCart/CheckOut" class="primary-btn">Tiến hành thanh toán</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+            else
+            {
+                <h1 class="title">Bạn chưa có sản phẩm
+    <button class="btn-shop"><a class="a-shop" href="/Home/Product">SHOP NOW</a></button>
+    </h1>
+            }
+<style>
+    .title {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 1em;
+    }
+    .btn-shop {
+        border-radius: 10px;
+        background: #7fad39;
+        border: none;
+        color: white;
+        margin-left: 1em;
+    }
+    .a-shop{
+        color:#fff
+    }
+
+</style>
+    <!-- Shoping Cart Section End -->

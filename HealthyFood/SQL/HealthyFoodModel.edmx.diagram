@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf56876cc30544178c5dd6bd468a23d3" Name="Diagram1">
+        <EntityTypeShape EntityType="HealthyFoodModel.BAIVIET" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.CONTACT" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.CHITIETDONTHANG" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.CHUDE" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.DONDATHANG" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.GIAMGIA" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.LOAISANPHAM" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.SANPHAM" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthyFoodModel.TACGIA" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="HealthyFoodModel.FK__BAIVIET__MaKH__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="HealthyFoodModel.FK_CHITIETDONTHANG_DONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="HealthyFoodModel.FK_CHITIETDONTHANG_SACH" ManuallyRouted="false" />
+        <AssociationConnector Association="HealthyFoodModel.FK_Chude" ManuallyRouted="false" />
+        <AssociationConnector Association="HealthyFoodModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="HealthyFoodModel.FK_NhaXB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

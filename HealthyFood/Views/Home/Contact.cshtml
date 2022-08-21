@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Contact Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="~/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Liên hệ</h2>
+                    <div class="breadcrumb__option">
+                        <a href="./index.html">Home</a>
+                        <span>Liên hệ với chúng tôi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_phone"></span>
+                    <h4>Điện thoại</h4>
+                    <p>+84 354 752 196</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_pin_alt"></span>
+                    <h4>Địa chỉ</h4>
+                    <p>47 Đường Liên Ấp Hoà Bình Hưng Long/Trảng Bom</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_clock_alt"></span>
+                    <h4>Mở cửa</h4>
+                    <p>8:00 sáng đến 23:00 sáng</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_mail_alt"></span>
+                    <h4>Email</h4>
+                    <p>healthyfoodlnn@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+<!-- Map Begin -->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3243857809507!2d107.0671478771291!3d10.93885062731542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e363a3e3ca1f%3A0x9e627dc71885e7b9!2zNDcgxJAuIExpw6puIOG6pHAgSMOyYSBCw6xuaCAtIEjGsG5nIExvbmcsIMSQw7RuZyBIb8OgLCBUcuG6o25nIEJvbSwgxJDhu5NuZyBOYWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1638179850374!5m2!1svi!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+    <div class="map-inside">
+        <i class="icon_pin"></i>
+        <div class="inside-widget">
+            <h4>Trảng Bom</h4>
+            <ul>
+                <li>Phone: +84 354 752 196</li>
+                <li>Add: 47 Đường Liên Ấp Hoà Bình Hưng Long, Trảng Bom</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!-- Map End -->
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Để lại tin nhắn</h2>
+                </div>
+            </div>
+        </div>
+        <form action="Contact" method="post">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Họ và Tên" name="HoTen">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Email" name="Email">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <textarea placeholder="Lời nhắn" name="Comment"></textarea>
+                    <button type="submit" class="site-btn">Gửi</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact Form End -->

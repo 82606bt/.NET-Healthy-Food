@@ -1,0 +1,79 @@
+﻿@model HealthyFood.Models.Account
+@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+
+}
+<div style="background-color: #228765;
+        margin-top:-50px;">
+    @using (Html.BeginForm("Login", "Customer", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="_2XRSuf _2tK8Te"
+             style="background-image: url(/img/background.png);  background-repeat: no-repeat; background-position: left left;">
+            <form action="" method="post">
+                <div class="_3KEKx7 _34gSQ- _2kpMlA">
+                    <div class="Xqnqjs">
+                        <div class="_3-m13F">
+                            <div class="_11EqvS">Đăng nhập</div>
+                        </div>
+                    </div>
+                    <div class="_3e4zDA">
+                        <div></div>
+                        <div class="_3nZHpB">
+                            <div class="_3mizNj">
+                                <input class="yReWDs" type="text" placeholder="Tên đăng nhập" autocomplete="on"
+                                       name="TaiKhoan" maxlength="128" value="">
+                            </div>
+                            @Html.ValidationMessageFor(x => x.TaiKhoan)
+                            <div class="_2RHkvG">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_35M4-Y">
+                        <div class="_3mizNj">
+                            <input class="yReWDs" type="password" placeholder="Mật khẩu" autocomplete="current-password"
+                                   name="MatKhau" maxlength="16" value="">
+
+                        </div>
+                        @Html.ValidationMessageFor(x => x.MatKhau)
+                        <div class="_2RHkvG"></div>
+                    </div>
+                    <p>
+                        <label><a style="color: red; margin-left: 2em;">@ViewBag.error</a></label>
+
+                    </p>
+                    <div class="_button_login">
+                        <button type="submit" href="#" class="site_btn_login">ĐĂNG NHẬP</button>
+                    </div>
+
+                    <div class="_1upyIZ">
+                        <a class="_2Sf-pK" href="#">Quên mật khẩu</a>
+
+                    </div>
+                    <div>
+                        <div class="IFLxoY">
+                            <div class="_3svg61"></div>
+                            <span class="_1ZEpVL">HOẶC</span>
+                            <div class="_3svg61"></div>
+                        </div>
+                    </div>
+                    <div class="_3AiUtd">
+                        <div class="_2O9TWB yjBjsT">
+                            Bạn mới biết đến Healthy Food?
+                            <a class="_25Fkvp" href="/Customer/Register">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+</div>
+<style>
+    .field-validation-error{
+        color:red;
+    }
+    .yReWDs{width:100%}
+    .yReWDs{width:100%}
+</style>
+

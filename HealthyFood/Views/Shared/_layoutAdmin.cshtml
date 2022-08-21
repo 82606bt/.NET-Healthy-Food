@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="~/StyleAdmin/css/font-face.css" rel="stylesheet" />
+    <link href="~/StyleAdmin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" />
+    <!-- Bootstrap CSS-->
+    <link href="~/StyleAdmin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" />
+    <!-- Vendor CSS-->
+    <link href="~/StyleAdmin/vendor/animsition/animsition.min.css" rel="stylesheet" />
+    <link href="~/StyleAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/wow/animate.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/slick/slick.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+    <link href="~/StyleAdmin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" />
+    <!-- Main CSS-->
+    <link href="~/StyleAdmin/css/theme.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="@Url.Action("Index","Admin")">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Product","Admin")">
+                                <i class="fas fa-shopping-bag"></i> View Sản Phẩm
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("ViewContact","Admin")">
+                                <i class="fas fa-shopping-bag"></i> View Phản Hồi
+                            </a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-building"></i>Công Ty
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="@Url.Action("CreateProduct", "Admin")">
+                                        <i class="fa fa-plus"></i>Thêm Sản Phẩm
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Công Việc
+                            </a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="~/img/logo2.png" alt="Healthy Food" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="" href="@Url.Action("Index","Admin")">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Product","Admin")">
+                                <i class="fa fa-building"></i>View Sản Phẩm
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("ViewContact","Admin")">
+                                <i class="fas fa-newspaper-o"></i> View Phản Hồi
+                            </a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-building"></i>Công Việc
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="@Url.Action("CreateProduct", "Admin")">
+                                        <i class="fa fa-plus"></i>Thêm Sản Phẩm
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <a  href="/Admin/ViewContact">
+                                            <i class="zmdi zmdi-email"></i>
+                                            <span class="quantity"> @ViewBag.Contact1 </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="~/img/blog/details/author.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Admin</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">john doe</a>
+                                                    </h5>
+                                                    <span class="email">johndoe@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account
+                                                    </a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting
+                                                    </a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+
+                @RenderBody()
+                <!-- END MAIN CONTENT-->
+                <!-- END PAGE CONTAINER-->
+
+            </div>
+        </div>
+    </div>
+
+
+    <hr />
+    <footer>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <p>Copyright © 2022 HealthyFood. All rights reserved.<a href="/Home/Index">HealthyFood</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/StyleAdmin/Scripts/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/StyleAdmin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="~/StyleAdmin/vendor/bootstrap-4.1/popper.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="~/StyleAdmin/vendor/slick/slick.js"></script>
+    <script src="~/StyleAdmin/vendor/wow/wow.min.js"></script>
+    <script src="~/StyleAdmin/vendor/animsition/animsition.min.js"></script>
+    <script src="~/StyleAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/StyleAdmin/vendor/counter-up/waypoints.min.js"></script>
+    <script src="~/StyleAdmin/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="~/StyleAdmin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/StyleAdmin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/StyleAdmin/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/StyleAdmin/vendor/select2/select2.min.js"></script>
+    <!-- Main JS-->
+    <script src="~/StyleAdmin/Scripts/js/main.js"></script>
+    <script src="~/StyleAdmin/Scripts/js/Setting.js"></script>
+</body>
+</html>

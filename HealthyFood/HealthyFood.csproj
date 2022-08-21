@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB47F97C-FC26-4D81-824A-7D83FBFC2B99}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthyFood</RootNamespace>
+    <AssemblyName>HealthyFood</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\ChuDe.cs" />
+    <Compile Include="Models\CreateAccount.cs" />
+    <Compile Include="Models\GiamGia.cs" />
+    <Compile Include="Models\PhanHoi.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL\BAIVIET.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\CHITIETDONTHANG.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\CHUDE.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\CONTACT.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\DONDATHANG.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\GIAMGIA.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\HealthyFoodModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyFoodModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\HealthyFoodModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\HealthyFoodModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyFoodModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\KHACHHANG.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\LOAISANPHAM.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\NHACUNGCAP.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\SANPHAM.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\TACGIA.cs">
+      <DependentUpon>HealthyFoodModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\elegant-icons.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\nice-select.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\slicknav.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\ElegantIcons.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\background.png" />
+    <Content Include="img\banner\banner-1.jpg" />
+    <Content Include="img\banner\banner-2.jpg" />
+    <Content Include="img\blog\blog-1.jpg" />
+    <Content Include="img\blog\blog-2.jpg" />
+    <Content Include="img\blog\blog-3.jpg" />
+    <Content Include="img\blog\blog-4.jpg" />
+    <Content Include="img\blog\blog-5.jpg" />
+    <Content Include="img\blog\blog-6.jpg" />
+    <Content Include="img\blog\details\details-author.jpg" />
+    <Content Include="img\blog\details\details-hero.jpg" />
+    <Content Include="img\blog\details\details-pic.jpg" />
+    <Content Include="img\blog\sidebar\sr-1.jpg" />
+    <Content Include="img\blog\sidebar\sr-2.jpg" />
+    <Content Include="img\blog\sidebar\sr-3.jpg" />
+    <Content Include="img\breadcrumb.jpg" />
+    <Content Include="img\cart\cart-1.jpg" />
+    <Content Include="img\cart\cart-2.jpg" />
+    <Content Include="img\cart\cart-3.jpg" />
+    <Content Include="img\categories\cat-1.jpg" />
+    <Content Include="img\categories\cat-2.jpg" />
+    <Content Include="img\categories\cat-3.jpg" />
+    <Content Include="img\categories\cat-4.jpg" />
+    <Content Include="img\categories\cat-5.jpg" />
+    <Content Include="img\featured\feature-1.jpg" />
+    <Content Include="img\featured\feature-2.jpg" />
+    <Content Include="img\featured\feature-3.jpg" />
+    <Content Include="img\featured\feature-4.jpg" />
+    <Content Include="img\featured\feature-5.jpg" />
+    <Content Include="img\featured\feature-6.jpg" />
+    <Content Include="img\featured\feature-7.jpg" />
+    <Content Include="img\featured\feature-8.jpg" />
+    <Content Include="img\hero\banner.jpg" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\language.png" />
+    <Content Include="img\latest-product\lp-1.jpg" />
+    <Content Include="img\latest-product\lp-2.jpg" />
+    <Content Include="img\latest-product\lp-3.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\payment-item.png" />
+    <Content Include="img\product\details\product-details-1.jpg" />
+    <Content Include="img\product\details\product-details-2.jpg" />
+    <Content Include="img\product\details\product-details-3.jpg" />
+    <Content Include="img\product\details\product-details-4.jpg" />
+    <Content Include="img\product\details\product-details-5.jpg" />
+    <Content Include="img\product\details\thumb-1.jpg" />
+    <Content Include="img\product\details\thumb-2.jpg" />
+    <Content Include="img\product\details\thumb-3.jpg" />
+    <Content Include="img\product\details\thumb-4.jpg" />
+    <Content Include="img\product\discount\pd-1.jpg" />
+    <Content Include="img\product\discount\pd-2.jpg" />
+    <Content Include="img\product\discount\pd-3.jpg" />
+    <Content Include="img\product\discount\pd-4.jpg" />
+    <Content Include="img\product\discount\pd-5.jpg" />
+    <Content Include="img\product\discount\pd-6.jpg" />
+    <Content Include="img\product\product-1.jpg" />
+    <Content Include="img\product\product-10.jpg" />
+    <Content Include="img\product\product-11.jpg" />
+    <Content Include="img\product\product-12.jpg" />
+    <Content Include="img\product\product-2.jpg" />
+    <Content Include="img\product\product-3.jpg" />
+    <Content Include="img\product\product-4.jpg" />
+    <Content Include="img\product\product-5.jpg" />
+    <Content Include="img\product\product-6.jpg" />
+    <Content Include="img\product\product-7.jpg" />
+    <Content Include="img\product\product-8.jpg" />
+    <Content Include="img\product\product-9.jpg" />
+    <Content Include="img\vietnam.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.nice-select.min.js" />
+    <Content Include="js\jquery.slicknav.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mixitup.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\ElegantIcons.eot" />
+    <Content Include="fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\ElegantIcons.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="sass\style.scss" />
+    <Content Include="sass\_base.scss" />
+    <Content Include="sass\_blog-details.scss" />
+    <Content Include="sass\_blog-sidebar.scss" />
+    <Content Include="sass\_blog.scss" />
+    <Content Include="sass\_breadcrumb.scss" />
+    <Content Include="sass\_checkout.scss" />
+    <Content Include="sass\_contact.scss" />
+    <Content Include="sass\_footer.scss" />
+    <Content Include="sass\_header.scss" />
+    <Content Include="sass\_hero.scss" />
+    <Content Include="sass\_home-page.scss" />
+    <Content Include="sass\_mixins.scss" />
+    <Content Include="sass\_responsive.scss" />
+    <Content Include="sass\_shop-details.scss" />
+    <Content Include="sass\_shop-grid.scss" />
+    <Content Include="sass\_shoping-cart.scss" />
+    <Content Include="sass\_sidebar.scss" />
+    <Content Include="sass\_variable.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SQL\HealthyFoodModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthyFoodModel.edmx</DependentUpon>
+      <LastGenOutput>HealthyFoodModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SQL\HealthyFoodModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthyFoodModel.edmx</DependentUpon>
+      <LastGenOutput>HealthyFoodModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="StyleAdmin\bootstrap.css" />
+    <Content Include="StyleAdmin\bootstrap.min.css" />
+    <Content Include="StyleAdmin\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="StyleAdmin\css\font-face.css" />
+    <Content Include="StyleAdmin\css\theme.css" />
+    <Content Include="StyleAdmin\Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="StyleAdmin\Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="StyleAdmin\Scripts\bootstrap.js" />
+    <Content Include="StyleAdmin\Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="SQL\HealthyFoodModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HealthyFoodModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SQL\HealthyFoodModel.edmx.diagram">
+      <DependentUpon>HealthyFoodModel.edmx</DependentUpon>
+    </Content>
+    <None Include="StyleAdmin\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="StyleAdmin\Scripts\jquery-1.10.2.js" />
+    <Content Include="StyleAdmin\Scripts\jquery-1.10.2.min.js" />
+    <None Include="StyleAdmin\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="StyleAdmin\Scripts\jquery.validate.js" />
+    <Content Include="StyleAdmin\Scripts\jquery.validate.min.js" />
+    <Content Include="StyleAdmin\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="StyleAdmin\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="StyleAdmin\Scripts\js\bootstrap-datetimepicker.js" />
+    <Content Include="StyleAdmin\Scripts\js\jquery-3.2.1.min.js" />
+    <Content Include="StyleAdmin\Scripts\js\jquery-ui.min.js" />
+    <Content Include="StyleAdmin\Scripts\js\main.js" />
+    <Content Include="StyleAdmin\Scripts\js\moment.js" />
+    <Content Include="StyleAdmin\Scripts\js\Setting.js" />
+    <Content Include="StyleAdmin\Scripts\modernizr-2.6.2.js" />
+    <Content Include="StyleAdmin\Scripts\respond.js" />
+    <Content Include="StyleAdmin\Scripts\respond.min.js" />
+    <None Include="StyleAdmin\Scripts\_references.js" />
+    <Content Include="StyleAdmin\Site.css" />
+    <Content Include="StyleAdmin\vendor\animsition\animsition.min.css" />
+    <Content Include="StyleAdmin\vendor\animsition\animsition.min.js" />
+    <Content Include="StyleAdmin\vendor\bootstrap-4.1\bootstrap.min.css" />
+    <Content Include="StyleAdmin\vendor\bootstrap-4.1\bootstrap.min.js" />
+    <Content Include="StyleAdmin\vendor\bootstrap-4.1\popper.min.js" />
+    <Content Include="StyleAdmin\vendor\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="StyleAdmin\vendor\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="StyleAdmin\vendor\chartjs\Chart.bundle.min.js" />
+    <Content Include="StyleAdmin\vendor\circle-progress\circle-progress.js" />
+    <Content Include="StyleAdmin\vendor\circle-progress\circle-progress.min.js" />
+    <Content Include="StyleAdmin\vendor\countdown\countdowntime.js" />
+    <Content Include="StyleAdmin\vendor\countdown\jquery.countdown.min.js" />
+    <Content Include="StyleAdmin\vendor\countdown\moment-timezone-with-data.min.js" />
+    <Content Include="StyleAdmin\vendor\countdown\moment-timezone.min.js" />
+    <Content Include="StyleAdmin\vendor\countdown\moment.min.js" />
+    <Content Include="StyleAdmin\vendor\counter-up\jquery.counterup.min.js" />
+    <Content Include="StyleAdmin\vendor\counter-up\jquery.waypoints.min.js" />
+    <Content Include="StyleAdmin\vendor\counter-up\waypoints.min.js" />
+    <Content Include="StyleAdmin\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="StyleAdmin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\css\fontawesome-all.min.css" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-brands-400.svg" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-regular-400.svg" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-solid-900.svg" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\CHANGELOG.txt" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\CONTRIBUTING.txt" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.css" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.min.css" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.min.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.print.css" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\fullcalendar.print.min.css" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\gcal.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\gcal.min.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\lib\moment.min.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\LICENSE.txt" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale-all.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\af.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-dz.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-kw.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-ly.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-ma.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-sa.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar-tn.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ar.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\be.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\bg.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\bs.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ca.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\cs.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\da.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\de-at.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\de-ch.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\de.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\el.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\en-au.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\en-ca.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\en-gb.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\en-ie.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\en-nz.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\es-do.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\es-us.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\es.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\et.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\eu.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\fa.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\fi.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\fr-ca.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\fr-ch.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\fr.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\gl.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\he.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\hi.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\hr.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\hu.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\id.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\is.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\it.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ja.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ka.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\kk.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ko.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\lb.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\lt.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\lv.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\mk.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ms-my.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ms.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\nb.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\nl-be.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\nl.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\nn.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\pl.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\pt-br.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\pt.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ro.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\ru.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sk.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sl.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sq.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sr-cyrl.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sr.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\sv.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\th.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\tr.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\uk.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\vi.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\zh-cn.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\zh-hk.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\locale\zh-tw.js" />
+    <Content Include="StyleAdmin\vendor\fullcalendar-3.10.0\README.txt" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\css\lightbox.css" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\images\close.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\images\loading.gif" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\images\next.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\images\prev.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox.js" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox.min.js" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\css\lightbox.css" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\images\close.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\images\loading.gif" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\images\next.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\images\prev.png" />
+    <Content Include="StyleAdmin\vendor\lightbox2\src\js\lightbox.js" />
+    <Content Include="StyleAdmin\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="StyleAdmin\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="StyleAdmin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="StyleAdmin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="StyleAdmin\vendor\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="StyleAdmin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="StyleAdmin\vendor\progressbar\progressbar.js" />
+    <Content Include="StyleAdmin\vendor\progressbar\progressbar.min.js" />
+    <Content Include="StyleAdmin\vendor\select2\select2.min.css" />
+    <Content Include="StyleAdmin\vendor\select2\select2.min.js" />
+    <Content Include="StyleAdmin\vendor\slick\ajax-loader.gif" />
+    <Content Include="StyleAdmin\vendor\slick\fonts\slick.svg" />
+    <Content Include="StyleAdmin\vendor\slick\slick-theme.css" />
+    <Content Include="StyleAdmin\vendor\slick\slick.css" />
+    <Content Include="StyleAdmin\vendor\slick\slick.js" />
+    <Content Include="StyleAdmin\vendor\slick\slick.min.js" />
+    <Content Include="StyleAdmin\vendor\smk-accordion\accordion.css" />
+    <Content Include="StyleAdmin\vendor\smk-accordion\accordion.js" />
+    <Content Include="StyleAdmin\vendor\smk-accordion\accordion.min.js" />
+    <Content Include="StyleAdmin\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.brazil.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.europe.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.france.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.germany.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.min.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.russia.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.usa.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jquery.vmap.world.js" />
+    <Content Include="StyleAdmin\vendor\vector-map\jqvmap.min.css" />
+    <Content Include="StyleAdmin\vendor\wow\animate.css" />
+    <Content Include="StyleAdmin\vendor\wow\wow.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Home\Posts.cshtml" />
+    <Content Include="Views\Home\postsDetails.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
+    <Content Include="Views\Home\productDetail.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\ShoppingCart\ViewCart.cshtml" />
+    <Content Include="Views\ShoppingCart\ViewCartTotal.cshtml" />
+    <Content Include="Views\Home\User.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\ShoppingCart\ThankYou.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_layoutAdmin.cshtml" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="StyleAdmin\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-brands-400.eot" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-brands-400.ttf" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-brands-400.woff" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-brands-400.woff2" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-regular-400.eot" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-regular-400.ttf" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-regular-400.woff" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-regular-400.woff2" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-solid-900.eot" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-solid-900.ttf" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-solid-900.woff" />
+    <Content Include="StyleAdmin\vendor\font-awesome-5\webfonts\fa-solid-900.woff2" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="StyleAdmin\vendor\lightbox2\dist\js\lightbox.min.map" />
+    <Content Include="StyleAdmin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="StyleAdmin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="StyleAdmin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="StyleAdmin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="StyleAdmin\vendor\slick\config.rb" />
+    <Content Include="StyleAdmin\vendor\slick\fonts\slick.eot" />
+    <Content Include="StyleAdmin\vendor\slick\fonts\slick.ttf" />
+    <Content Include="StyleAdmin\vendor\slick\fonts\slick.woff" />
+    <Content Include="StyleAdmin\vendor\slick\slick-theme.less" />
+    <Content Include="StyleAdmin\vendor\slick\slick-theme.scss" />
+    <Content Include="StyleAdmin\vendor\slick\slick.less" />
+    <Content Include="StyleAdmin\vendor\slick\slick.scss" />
+    <Content Include="StyleAdmin\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Admin\Product.cshtml" />
+    <Content Include="Views\Admin\CreateProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Home\ThankYou.cshtml" />
+    <Content Include="Views\Admin\ViewContact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50612</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50612/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                @using (Html.BeginForm("CreateProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "was-validated" }))
+                {
+                    <div class="form-group">
+                        <label for="tencongty"> Tên Sản Phẩm</label>
+                        <input type="text" class="form-control" id="Name" name="TenSanPham" required>
+                        <div class="valid-feedback">cám ơn.</div>
+                        <div class="invalid-feedback">Vui lòng nhập</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="customFile" name="uploadImage" required>
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <div class="valid-feedback">cám ơn.</div>
+                            <div class="invalid-feedback">Vui lòng nhập</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mota">Mô tả</label>
+                        <textarea class="form-control" id="Description" name="Mota" rows="5" required></textarea>
+                        <div class="valid-feedback">cám ơn.</div>
+                        <div class="invalid-feedback">Vui lòng nhập</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sdt">Giá</label>
+                        <input type="text" class="form-control" id="Price" name="Giaban" required>
+                        <div class="valid-feedback">cám ơn.</div>
+                        <div class="invalid-feedback">Vui lòng nhập</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sdt">Số Lượng</label>
+                        <input type="text" class="form-control" id="SoLuong" name="Soluongton" required>
+                        <div class="valid-feedback">cám ơn.</div>
+                        <div class="invalid-feedback">Vui lòng nhập</div>
+                    </div>
+                    <div class="form-group">
+                        <h4>Sản Phẩm : </h4>
+                        <div style="display: flex;flex-direction: column;">
+                            <label class="radio-inline"><input type="radio" value="false" name="DacTrung">Cũ</label>
+                            <label class="radio-inline"><input type="radio" value="true" name="DacTrung">Mới</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4>Nhà Cung Cấp : </h4>
+                        @foreach (var item in ViewBag.NCC)
+                        {
+                            <div>
+                                <label class="radio-inline"><input type="radio" value="@item.MaNCC" name="MaNCC">@item.TenNCC</label>
+                            </div>
+                        }
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

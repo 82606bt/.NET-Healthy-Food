@@ -1,0 +1,84 @@
+﻿@model HealthyFood.SQL.KHACHHANG
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@Html.AntiForgeryToken()
+
+<div style="background-color: #228765;
+        margin-top:-50px;">
+    @foreach (var item in ViewBag.User)
+    {
+        <div class="_2XRSuf _2tK8Te" style="background-image: url(/img/background.png); background-repeat: no-repeat; background-position: left left; margin-top: 3em;">
+            <form class="form-info" method="post" action="Info">
+                
+                <p>
+                    <span style="font-size: 24px;font-weight:bold">THÔNG TIN TÀI KHOẢN</span> 
+                </p>
+                <p>
+                    <label>Họ Tên:</label>
+                    <input style="padding-left: 18px" value="@item.HoTen" name="HoTen" />
+                </p>
+                <p>
+                    <label>Tài Khoản:</label>
+                    <input style="padding-left: 18px; background-color: #cfcfcfcc" disabled value="@item.TaiKhoan" name="TaiKhoan">
+                </p>
+                <p>
+                    <label>Mật khẩu:</label>
+                    <input style="padding-left: 18px; background-color: #cfcfcfcc" disabled value="@item.MatKhau" name="MatKhau">
+                </p>
+                <p>
+                    <label>Ngày Sinh:</label>
+                    <input style="padding-left: 18px" type="date" value="@item.NgaySinh" name="NgaySinh">
+                </p>
+                <p>
+                    <label>Địa chỉ:</label>
+                    <input style="padding-left: 18px" type="text" value="@item.DiaChi" name="DiaChi">
+                </p>
+                <p>
+                    <label>Email:</label>
+                    <input style="padding-left: 8px" type="email" value="@item.Email" name="Email">
+                </p>
+                <p>
+                    <label>Điện thoại:</label>
+                    <input style="padding-left: 18px" type="number" value="@item.DienThoai" name="DienThoai">
+                </p>
+                <div class="_button_login">
+                    <button style="width: 160px; float: right; border-radius: 6px; font-weight: bold;" type="submit" href="/Home/Index" class="site_btn_login">LƯU</button>
+                </div>
+            </form>
+        </div>
+    }
+
+</div>
+    <style>
+        .form-info p {
+            color: #fff;
+            margin-left: 20em;
+        }
+
+        p label {
+            font-weight: bold;
+            width: 100px;
+        }
+
+        p input {
+            width: 310px;
+            line-height: 36px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        }
+
+        input::-webkit-input-placeholder {
+            line-height: 1.5em;
+        }
+
+        ._button_login {
+            margin-left: 25em;
+            margin-top: 2em;
+            
+        }
+    </style>
+

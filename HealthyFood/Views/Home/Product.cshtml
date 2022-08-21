@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Shop Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    @model PagedList.IPagedList<HealthyFood.SQL.SANPHAM>
+}
+@using PagedList.Mvc;
+@using PagedList;
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>HEALTHY FOOD</h2>
+                    <div class="breadcrumb__option">
+                        <a href="./index.html">Home</a>
+                        <span>Sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5">
+                <div class="sidebar">
+                    <div class="sidebar__item">
+                        <h4>DANH MỤC SẢN PHẨM</h4>
+                        <ul>
+                            <li><a href="#">Thịt</a></li>
+                            <li><a href="#">Rau củ</a></li>
+                            <li><a href="#">Trái cây & hạt</a></li>
+                            <li><a href="#">Đồ ăn dinh dưỡng</a></li>
+                            <li><a href="#">Sữa & nước trái cây</a></li>
+
+                        </ul>
+                    </div>
+
+
+
+                    <div class="sidebar__item">
+                        <div class="latest-product__text">
+                            <h4>Sản phẩm mới </h4>
+                            <div class="latest-product__slider owl-carousel">
+                                <div class="latest-prdouct__slider__item">
+                                    @foreach (var item in ViewBag.SanPham)
+                                    {
+                                        string @gia = string.Format("{0:#,##0}", @item.Giaban);
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="@item.Anhbia" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>@item.TenSanPham</h6>
+                                                <span>@gia đ</span>
+                                            </div>
+                                        </a>
+                                    }
+
+                                </div>
+                                <div class="latest-prdouct__slider__item">
+                                    @foreach (var item in ViewBag.SanPham)
+                                    {
+                                        string @gia = string.Format("{0:#,##0}", @item.Giaban);
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="@item.Anhbia" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>@item.TenSanPham</h6>
+                                                <span>@gia đ</span>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7">
+                <div class="product__discount">
+                    <div class="section-title product__discount__title">
+                        <h2>Giảm giá</h2>
+                    </div>
+                    <div class="row">
+                        <div class="product__discount__slider owl-carousel">
+                            @foreach(var item in ViewBag.SanPham2) {
+                                decimal @discount = 20;
+                                decimal @percent = (100 - @discount)/100;
+                                decimal @Sales = @item.Giaban * @percent;
+                                string @sales = string.Format("{0:#,##0}", @Sales);
+                                string @gia = string.Format("{0:#,##0}", @item.Giaban);
+                            <div class="col-lg-4">
+                                <div class="product__discount__item">
+                                    <div class="product__discount__item__pic set-bg"
+                                         data-setbg="@item.Anhbia">
+                                        <div class="product__discount__percent"> -@discount%</div>
+                                        <ul class="product__item__pic__hover">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="productDetail/@item.MaSanPham"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="/ShoppingCart/ThemGioHang/@item.MaSanPham"><i class="fa fa-shopping-cart"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product__discount__item__text">
+                                        <span>Thịt</span>
+                                        <h5><a href="#">@item.TenSanPham</a></h5>
+                                        <div class="product__item__price">@sales đ<span>@gia đ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                  
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="filter__sort">
+                                <span>Sort By</span>
+                                <select>
+                                    <option value="0">Default</option>
+                                    <option value="0">Default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="filter__found">
+                                <h6><span>16</span> Products found</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3">
+                            <div class="filter__option">
+                                <span class="icon_grid-2x2"></span>
+                                <span class="icon_ul"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        string @gia = string.Format("{0:#,##0}", @item.Giaban);
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="@item.Anhbia">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="productDetail/@item.MaSanPham"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="/ShoppingCart/ThemGioHang/@item.MaSanPham"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">@item.TenSanPham</a></h6>
+                                    <h5>@gia đ</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+                <div class="product__pagination">
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+                    @Html.PagedListPager(Model, page => Url.Action("Product", new { page }))
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

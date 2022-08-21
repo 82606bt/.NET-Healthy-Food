@@ -1,0 +1,83 @@
+﻿@model HealthyFood.Models.CreateAccount
+@{
+    ViewBag.Title = "Register Page";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+@Html.AntiForgeryToken()
+<div style="background-color: #228765;
+        margin-top:-50px;">
+    <div class="_2XRSuf _2tK8Te"
+         style="background-image: url(/img/background.png);  background-repeat: no-repeat; background-position: left left;">
+        <form action="Register" method="post">
+            <div class="_3KEKx7 _34gSQ- _2kpMlA">
+                <div class="Xqnqjs">
+                    <div class="_3-m13F">
+                        <div class="_11EqvS">Đăng ký</div>
+                    </div>
+                </div>
+                <div class="_3e4zDA">
+                    <div></div>
+                    <div class="_3nZHpB">
+                        <div class="_3mizNj">
+                            <input class="yReWDs" type="text" placeholder="Họ Tên" autocomplete="on"
+                                   name="HoTen" maxlength="128" value="">
+                        </div>
+                        @Html.ValidationMessageFor(x => x.HoTen)
+                        <div class="_2RHkvG">
+                        </div>
+                    </div>
+                    <div class="_3nZHpB">
+                        <div class="_3mizNj">
+                            <input class="yReWDs" type="text" placeholder="Tên đăng nhập" autocomplete="on"
+                                   name="TaiKhoan" maxlength="128" value="">
+                        </div>
+                        @Html.ValidationMessageFor(x => x.TaiKhoan)
+                        <div class="_2RHkvG">
+                        </div>
+                    </div>
+                </div>
+                <div class="_35M4-Y">
+                    <div class="_3mizNj">
+                        <input class="yReWDs" type="password" placeholder="Mật khẩu" autocomplete="on"
+                               name="MatKhau" maxlength="128" value="">
+                    </div>
+                    @Html.ValidationMessageFor(x => x.MatKhau)
+                    <div class="_2RHkvG"></div>
+                </div>
+                <div class="_35M4-Y">
+                    <div class="_3mizNj">
+                        <input class="yReWDs" type="password" placeholder="Xác Nhận Mật khẩu" autocomplete="on"
+                               name="ConfirmPassword" maxlength="128" value="">
+                    </div>
+                    @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                    <div class="_2RHkvG"></div>
+                </div>
+                <div class="form-group row">
+                    <label><a style="color:red">@ViewBag.error</a></label>
+                </div>
+                <div class="_button_login">
+                    <button type="submit" href="#" class="site_btn_login">ĐĂNG KÍ</button>
+                </div>
+                <div>
+                    <div class="NFLxoY">
+                        <div class="_3svg61"></div>
+                        <span class="_1ZEpVL">HOẶC</span>
+                        <div class="_3svg61"></div>
+                    </div>
+                </div>
+                <div class="_3AiUtd">
+                    <div class="_2O9TWB yjBjsT">
+                        Bạn đã có tài khoản Healthy Food?
+                        <a class="_25Fkvp" href="/Customer/Login">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
